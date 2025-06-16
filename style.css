@@ -11,42 +11,34 @@ p {
     text-align: center;
 }
 
-.TOP {
-    color: #111111
-    
-    position: top;
-}
-
-
-
 /* ---------------------------------- */
 
 /* style.css */
 
 body {
-    margin: 0; /* ลบ margin เริ่มต้นของ body ออกไป */
+    margin: 0;
     font-family: Arial, sans-serif;
 }
 
 .fixed-navbar {
-    position: fixed; /* ทำให้แถบเมนูตรึงอยู่กับที่ */
-    top: 0;          /* ตรึงไว้ที่ขอบบนสุดของหน้าจอ */
-    left: 0;         /* ตรึงไว้ที่ขอบซ้ายสุดของหน้าจอ */
-    width: 100%;     /* ให้มีความกว้างเต็ม 100% ของหน้าจอ */
-    background-color: #333; /* สีพื้นหลังของแถบเมนู */
-    color: white;    /* สีตัวอักษร */
-    padding: 15px 0; /* เพิ่ม padding ด้านบนและล่าง */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* เพิ่มเงาเล็กน้อยเพื่อความสวยงาม */
-    z-index: 1000;   /* กำหนด z-index ให้สูง เพื่อให้แถบเมนูอยู่ด้านบนสุดขององค์ประกอบอื่นๆ */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
 }
 
 .navbar-content {
-    max-width: 1200px; /* กำหนดความกว้างสูงสุดของเนื้อหาภายในแถบเมนู */
-    margin: 0 auto;    /* จัดให้อยู่กึ่งกลาง */
-    display: flex;     /* ใช้ Flexbox ในการจัดเรียงโลโก้และเมนู */
-    justify-content: space-between; /* จัดให้โลโก้และเมนูอยู่คนละฝั่ง */
-    align-items: center; /* จัดให้อยู่กึ่งกลางในแนวตั้ง */
-    padding: 0 20px; /* เพิ่ม padding ด้านซ้ายและขวา เพื่อไม่ให้ชิดขอบจอเกินไป */
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* จัดให้โลโก้และเมนูอยู่คนละฝั่งในจอใหญ่ */
+    align-items: center;
+    padding: 0 20px;
 }
 
 .logo {
@@ -54,37 +46,85 @@ body {
     text-decoration: none;
     font-size: 24px;
     font-weight: bold;
+    /* โลโก้จะชิดซ้ายเสมอ เพราะ justify-content: space-between; จะดันองค์ประกอบอื่นไปทางขวา */
 }
 
-.fixed-navbar nav ul {
-    list-style: none; /* ลบจุดนำหน้าลิสต์ */
+/* ปุ่ม Hamburger Icon สำหรับมือถือ */
+.menu-toggle {
+    display: none; /* ซ่อนปุ่มโดย default ในหน้าจอขนาดใหญ่ */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.nav-wrapper ul {
+    font-family: "Kanit", sans-serif;
+    list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* ใช้ Flexbox สำหรับรายการเมนู */
+    display: flex; /* แสดงเมนูแบบแนวนอนในหน้าจอใหญ่ */
 }
 
-.fixed-navbar nav ul li {
-    margin-left: 20px; /* ระยะห่างระหว่างเมนูแต่ละรายการ */
+.nav-wrapper ul li {
+    margin-left: 20px;
 }
 
-.fixed-navbar nav ul li a {
+.nav-wrapper ul li a {
     color: white;
-    text-decoration: none; /* ลบเส้นใต้ลิงก์ */
+    text-decoration: none;
     font-size: 16px;
     padding: 5px 10px;
-    transition: background-color 0.3s ease; /* เพิ่ม transition เมื่อ hover */
+    transition: background-color 0.3s ease;
 }
 
-.fixed-navbar nav ul li a:hover {
-    background-color: #555; /* สีพื้นหลังเมื่อเมาส์วางทับ */
+.nav-wrapper ul li a:hover {
+    color: #222222;
+    background-color: #4ec67c;
     border-radius: 4px;
 }
 
-/* สำคัญ: เพิ่ม padding-top ให้กับเนื้อหาหลักของเว็บ 
-   เพื่อไม่ให้แถบเมนูที่ตรึงอยู่ด้านบนไปบังเนื้อหา
-*/
+/* ปรับ padding-top ให้กับเนื้อหาหลักของเว็บ */
 .content-wrapper {
-    padding-top: 70px; /* ปรับค่านี้ให้มากกว่าความสูงของแถบเมนูของคุณเล็กน้อย */
+    padding-top: 65px; /* ปรับค่านี้ให้มากกว่าความสูงของแถบเมนูของคุณเล็กน้อย (ค่าเดิมอาจจะขาด 'px' ไป) */
 }
 
-/* คุณสามารถลบ style ใน HTML สำหรับ section ที่เป็นตัวอย่างออกได้ เมื่อคุณมีเนื้อหาจริง */
+
+/* --- Media Queries สำหรับ Mobile Responsive --- */
+
+@media (max-width: 768px) { /* สำหรับหน้าจอขนาด 768px หรือเล็กกว่า (ทั่วไปสำหรับแท็บเล็ตและมือถือ) */
+    .navbar-content {
+        justify-content: space-between; /* โลโก้ชิดซ้าย, ปุ่มเมนูชิดขวา */
+        flex-wrap: wrap; /* ให้เนื้อหาขึ้นบรรทัดใหม่ได้ */
+    }
+
+    .menu-toggle {
+        display: block; /* แสดงปุ่ม Hamburger */
+    }
+
+    .nav-wrapper {
+        flex-basis: 100%; /* ให้ nav-wrapper กินพื้นที่ 100% ของบรรทัดใหม่ */
+        height: 0; /* ซ่อนเมนูเริ่มต้น */
+        overflow: hidden; /* ซ่อนเนื้อหาที่เกินมา */
+        transition: height 0.3s ease-out; /* เพิ่ม animation ในการเปิด-ปิด */
+    }
+
+    .nav-wrapper.active {
+        height: auto; /* เมื่อ class 'active' ถูกเพิ่ม เมนูจะปรากฏขึ้น */
+        max-height: 300px; /* กำหนด max-height เพื่อให้ transition ทำงานได้ (ปรับตามจำนวนเมนู) */
+    }
+
+    .nav-wrapper ul {
+        flex-direction: column; /* จัดเมนูเป็นแนวตั้ง */
+        width: 100%;
+        text-align: center; /* จัดกึ่งกลางข้อความเมนู */
+        background-color: #444; /* สีพื้นหลังของเมนูเมื่อเปิด */
+        padding: 10px 0;
+    }
+
+    .nav-wrapper ul li {
+        margin: 10px 0; /* ระยะห่างระหว่างเมนูแต่ละรายการในแนวตั้ง */
+    }
+}
