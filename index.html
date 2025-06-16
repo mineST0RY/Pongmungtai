@@ -1,17 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEST</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-    <body>
-        <div class="TOP">
+    <title>Fixed Navbar Example</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
 
+    <header class="fixed-navbar">
+        <div class="navbar-content">
+            <a href="#" class="logo">โลโก้ของคุณ</a>
+            <nav>
+                <ul>
+                    <li><a href="#">หน้าแรก</a></li>
+                    <li><a href="#">บริการ</a></li>
+                    <li><a href="#">สินค้า</a></li>
+                    <li><a href="#">เกี่ยวกับเรา</a></li>
+                    <li><a href="#">ติดต่อเรา</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <h1>TEST</h1>
-    
-    </body>
+    <div class="content-wrapper">
+        <section style="height: 800px; background-color: #f0f0f0; padding-top: 80px;">
+            <h1>ส่วนเนื้อหาหลักของเว็บ</h1>
+            <p>เลื่อนหน้าจอลงมาเพื่อดูว่าแถบเมนูไม่เลื่อนตาม</p>
+            <p>คุณอาจจะต้องเพิ่มระยะห่างด้านบนของเนื้อหา เพื่อไม่ให้เนื้อหาถูกแถบเมนูด้านบนบัง</p>
+        </section>
+        <section style="height: 600px; background-color: #e0e0e0;"></section>
+        <section style="height: 700px; background-color: #d0d0d0;"></section>
+    </div>
+
+</body>
 </html>

@@ -16,3 +16,75 @@ p {
     
     position: top;
 }
+
+
+
+/* ---------------------------------- */
+
+/* style.css */
+
+body {
+    margin: 0; /* ลบ margin เริ่มต้นของ body ออกไป */
+    font-family: Arial, sans-serif;
+}
+
+.fixed-navbar {
+    position: fixed; /* ทำให้แถบเมนูตรึงอยู่กับที่ */
+    top: 0;          /* ตรึงไว้ที่ขอบบนสุดของหน้าจอ */
+    left: 0;         /* ตรึงไว้ที่ขอบซ้ายสุดของหน้าจอ */
+    width: 100%;     /* ให้มีความกว้างเต็ม 100% ของหน้าจอ */
+    background-color: #333; /* สีพื้นหลังของแถบเมนู */
+    color: white;    /* สีตัวอักษร */
+    padding: 15px 0; /* เพิ่ม padding ด้านบนและล่าง */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* เพิ่มเงาเล็กน้อยเพื่อความสวยงาม */
+    z-index: 1000;   /* กำหนด z-index ให้สูง เพื่อให้แถบเมนูอยู่ด้านบนสุดขององค์ประกอบอื่นๆ */
+}
+
+.navbar-content {
+    max-width: 1200px; /* กำหนดความกว้างสูงสุดของเนื้อหาภายในแถบเมนู */
+    margin: 0 auto;    /* จัดให้อยู่กึ่งกลาง */
+    display: flex;     /* ใช้ Flexbox ในการจัดเรียงโลโก้และเมนู */
+    justify-content: space-between; /* จัดให้โลโก้และเมนูอยู่คนละฝั่ง */
+    align-items: center; /* จัดให้อยู่กึ่งกลางในแนวตั้ง */
+    padding: 0 20px; /* เพิ่ม padding ด้านซ้ายและขวา เพื่อไม่ให้ชิดขอบจอเกินไป */
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.fixed-navbar nav ul {
+    list-style: none; /* ลบจุดนำหน้าลิสต์ */
+    margin: 0;
+    padding: 0;
+    display: flex; /* ใช้ Flexbox สำหรับรายการเมนู */
+}
+
+.fixed-navbar nav ul li {
+    margin-left: 20px; /* ระยะห่างระหว่างเมนูแต่ละรายการ */
+}
+
+.fixed-navbar nav ul li a {
+    color: white;
+    text-decoration: none; /* ลบเส้นใต้ลิงก์ */
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease; /* เพิ่ม transition เมื่อ hover */
+}
+
+.fixed-navbar nav ul li a:hover {
+    background-color: #555; /* สีพื้นหลังเมื่อเมาส์วางทับ */
+    border-radius: 4px;
+}
+
+/* สำคัญ: เพิ่ม padding-top ให้กับเนื้อหาหลักของเว็บ 
+   เพื่อไม่ให้แถบเมนูที่ตรึงอยู่ด้านบนไปบังเนื้อหา
+*/
+.content-wrapper {
+    padding-top: 70px; /* ปรับค่านี้ให้มากกว่าความสูงของแถบเมนูของคุณเล็กน้อย */
+}
+
+/* คุณสามารถลบ style ใน HTML สำหรับ section ที่เป็นตัวอย่างออกได้ เมื่อคุณมีเนื้อหาจริง */
