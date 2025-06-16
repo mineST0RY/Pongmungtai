@@ -108,7 +108,8 @@ body {
         flex-basis: 100%; /* ให้ nav-wrapper กินพื้นที่ 100% ของบรรทัดใหม่ */
         height: 0; /* ซ่อนเมนูเริ่มต้น */
         overflow: hidden; /* ซ่อนเนื้อหาที่เกินมา */
-        transition: height 0.3s ease-out; /* เพิ่ม animation ในการเปิด-ปิด */
+        max-height: 0px;
+        transition: all 0.3s ease-out; /* เพิ่ม animation ในการเปิด-ปิด */
     }
 
     .nav-wrapper.active {
