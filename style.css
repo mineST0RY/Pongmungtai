@@ -23,6 +23,7 @@ body {
 .fixed-navbar {
     position: fixed;
     top: 0;
+    height: 35px;
     left: 0;
     width: 100%;
     background-color: #333;
@@ -42,9 +43,8 @@ body {
 }
 
 .logo {
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
+    width: 10%;
+    display: flexbox;
     font-weight: bold;
     /* โลโก้จะชิดซ้ายเสมอ เพราะ justify-content: space-between; จะดันองค์ประกอบอื่นไปทางขวา */
 }
@@ -58,11 +58,13 @@ body {
     font-size: 30px;
     cursor: pointer;
     padding: 5px 10px;
+    margin: -10px;
 }
 
 .nav-wrapper ul {
     font-family: "Kanit", sans-serif;
     list-style: none;
+    
     margin: 0;
     padding: 0;
     display: flex; /* แสดงเมนูแบบแนวนอนในหน้าจอใหญ่ */
@@ -114,13 +116,16 @@ body {
 
     .nav-wrapper.active {
         height: auto; /* เมื่อ class 'active' ถูกเพิ่ม เมนูจะปรากฏขึ้น */
+        width: 150px;
+        margin: 20px 0px 0px 0px;
         max-height: 300px; /* กำหนด max-height เพื่อให้ transition ทำงานได้ (ปรับตามจำนวนเมนู) */
     }
 
     .nav-wrapper ul {
         flex-direction: column; /* จัดเมนูเป็นแนวตั้ง */
-        width: 100%;
-        text-align: center; /* จัดกึ่งกลางข้อความเมนู */
+        width: 40%;
+        margin-left: 60%;
+        text-align: right; /* จัดกึ่งกลางข้อความเมนู */
         background-color: #444; /* สีพื้นหลังของเมนูเมื่อเปิด */
         padding: 10px 0;
     }
